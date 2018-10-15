@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSRF Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Update Login Deatils
+            </h1>
+            <h2>Hello, {{user}}</h2> <br>
+            <div>
+                <form method="POST" action="/update">
+
+                    <input hidden name="csrf" type="text" value="{{csrf}}">
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input name="email" class="input" type="email" placeholder="Email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input name="password" class="input" type="password" placeholder="Password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <input class="button is-primary" type="submit" value="Update"> <a class="button is-danger" href="/logout">Logout</a>
+                </form>
+            </div>
+        </div>
+    </section>
+    {% if msg == 'sucess' %}
+    <section>
+        <div class="notification is-success">
+            CSRF Token Valid!
+        </div>
+    </section>
+    {% elif msg == 'fail' %}
+    <section>
+        <div class="notification is-danger">
+            CSRF Token Not Valid!
+        </div>
+    </section>
+    {% else %}
+    <section>
+    </section>
+    {% endif %}
+</body>
+
+</html>
