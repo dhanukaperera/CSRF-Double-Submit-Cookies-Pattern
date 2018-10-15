@@ -1,5 +1,5 @@
 # Preventing CSRF Attacks using Double Submit Cookies Pattern (DSCP)
-This is demo web application demonstrate the how to present CSRF attacks using DSCP. Check the blog post -> https://medium.com/@dhanukaperera/csrf-with-synchronizer-token-pattern-a4af534d1764
+This is demo web application demonstrate the how to present CSRF attacks using DSCP. Check the blog post -> https://medium.com/@dhanukaperera/csrf-with-double-submit-cookies-pattern-fba1a7a99e27
 
 This is web application build using Python and Flask Framwork. Application use Jinja 2 as the template engine and Bulma as CSS Framework
 
